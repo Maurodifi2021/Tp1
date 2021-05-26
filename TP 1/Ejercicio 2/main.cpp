@@ -10,19 +10,20 @@ int main()
     cout << "Introduzca el valor de B1 "; cin >> b1;
     cout << "Introduzca el valor de M2 "; cin >> x2;
     cout << "Introduzca el valor de B2 "; cin >> b2;
-    Px = (((b1-b2)/(x1-x2))*-1);
-    Py = (Px*x1+b1);
-    if (x1==x2&&b1==b2)
+    if ((x1==x2)&&(b1!=b2))
+    {
+            cout << "No se puede realizar la interseccion porque el divisor es 0" << endl;
+            cout << "Por lo tanto las rectas son paralelas"<< endl;
+    }
+    else if (x1==x2&&b1==b2)
     {
         cout << "Las rectas tienen infinitos puntos de interseccion" << endl;
     }
-        else if (x1==x2)
-        {
-            cout << "Las rectas son paralelas"<< endl;
-        }
     else
     {
-        cout << "La interseccion de las rectas se da en: (" << Px << ";" << Py << ")" << endl;
+        Px = (((b1-b2)/(x1-x2))*-1);
+        Py = (Px*x1+b1);
+        cout << "La interseccion de se da en: (" << Px << ";" << Py << ")" << endl;
     }
 
 
